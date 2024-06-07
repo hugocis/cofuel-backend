@@ -16,7 +16,7 @@ const createPayment = async (req, res) => {
 };
 
 // Obtener todos los pagos
-const getAllPayments = async (req, res) => {
+const getPayments = async (req, res) => {
   const { data, error } = await supabase
     .from('payments')
     .select('*');
@@ -29,7 +29,7 @@ const getAllPayments = async (req, res) => {
 };
 
 // Obtener pagos por ID de viaje
-const getPaymentsByTripId = async (req, res) => {
+const getPaymentsByTrip = async (req, res) => {
   const { trip_id } = req.params;
 
   const { data, error } = await supabase
@@ -62,7 +62,7 @@ const deletePayment = async (req, res) => {
 
 module.exports = {
   createPayment,
-  getAllPayments,
-  getPaymentsByTripId,
+  getPayments,
+  getPaymentsByTrip,
   deletePayment,
 };
