@@ -6,7 +6,6 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
-// Define tus rutas aquí
 app.use('/api/auth', require('./routes/authRoutes'));
 app.use('/api/friends', require('./routes/friendRoutes'));
 app.use('/api/notifications', require('./routes/notificationRoutes'));
